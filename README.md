@@ -106,7 +106,10 @@ This version uses an Arduino R4 WiFi board, combining time-based predictive trac
 5.  Upload the code to your Arduino R4 WiFi.
 6.  Open the **Serial Monitor** (Baud Rate: 115200) to view the connection status and the IP address.
 7.  On a device on the same network, open a web browser and navigate to that IP address (e.g., `http://192.168.1.100`) to see the web console.
+8.  
 
+### Demo
+![Solar Tracker](https://github.com/13013-Zhang/ES2C6-Solar-Traker/blob/main/Solar%20Tracker%20With%20OLED%20Demo.gif)
 ---
 
 ## 💡 How It Works
