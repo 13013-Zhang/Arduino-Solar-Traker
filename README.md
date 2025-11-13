@@ -148,13 +148,13 @@ This project was a collaborative effort for the ES2C6 module, and the successful
 
 | Name | Assigned Role |
 | :--- | :--- |
-| **MONTEIRO, MARCUS** | Background Research |
-| **ZHAO, HAOXIANG (Owen)** | Mechanical Design and CAD Work |
-| **JACKSON, JOSH** | Electronic Design |
-| **STEPHAN, FREDDY** | Manufacture of Mechanical Components and Electronic Circuit Boards |
-| **MAINI, ROHAAN** | Assembly |
-| **BOYU ZHANG (BOB)** | Programming and Testing |
-| **CHARUSIRISAWAD, PUN** | Overall Project Management and Assigned Task Lead |
+| Monteiro, Marcus | Background Research |
+| Zhao, Haoxiang Owen | Mechanical Design and CAD Work |
+| Jackson, Josh | Electronic Design |
+| Stephan, Freddy | Manufacture of Mechanical Components and Electronic Circuit Boards |
+| Maini, Rohan | Assembly |
+| Boyu Zhang Bob (me) | Programming and Testing |
+| Charusirisawad, Pun | Overall Project Management and Assigned Task Lead |
 
 A special thank you to **Pun** for the overall project management and leadership.
 
