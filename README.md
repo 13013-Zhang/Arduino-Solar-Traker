@@ -10,24 +10,8 @@ This is a solar tracker repository for the ES2C6 course. This project includes t
 1.  **Simple LDR + OLED Tracker**: A pure "active" tracker that uses four LDRs (Light Dependent Resistors) to find the brightest light source and displays real-time data on an OLED screen.
 2.  **Advanced Hybrid + Web UI Tracker**: A "hybrid" tracker that uses an Arduino R4 WiFi to fetch precise UTC time, calculate the sun's astronomical position (azimuth/elevation), and then uses LDRs for fine-tuning. It also hosts a modern Web UI for status monitoring.
 
----
-
-## 🚀 Project Structure
-
-.  
-├── 3D Printing  
-├── Codes/   
-│   ├── V1.0  
-│   ├── ...   
-│   └── V2.0_R4  
-│  
-├── simple-ldr-oled-tracker/  
-│   └── V1.2_OLED_4SPI.ino  
-│  
-├── advanced-hybrid-tracker/  
-│   └── V2.1_EN.ino  
-│  
-└── Demo/   
+### Circuit
+![Circuit](Demo/Circuit.jpg)
 
 ---
 
@@ -65,7 +49,7 @@ This is a classic "active" solar tracker. It doesn't care about time or location
 
 ### 🔧 Setup and Usage
 
-1.  Download the code into the `simple-ldr-oled-tracker/` folder.
+1.  Download the code into the `Codes/simple-ldr-oled-tracker/` folder.
 2.  Open `simple-ldr-oled-tracker.ino` in the Arduino IDE.
 3.  Install the `Adafruit_SSD1306` and `Adafruit_GFX` libraries using the Library Manager.
 4.  **Check Pins**: Ensure your OLED and servo pin definitions match the `#define` section at the top of the code.
@@ -75,6 +59,11 @@ This is a classic "active" solar tracker. It doesn't care about time or location
     * Solar Panel: `A4`
 5.  Upload the code to your Arduino.
 6.  When the device boots, it will first perform a "find max light" scan. The OLED will then light up with real-time data, and the tracker will begin active tracking.
+
+### Demo
+- not assembled
+![Solar Tracker](<Demo/Solar Tracker With OLED Demo.gif>)
+
 
 ---
 
@@ -109,7 +98,7 @@ This version uses an Arduino R4 WiFi board, combining time-based predictive trac
 
 ### 🔧 Setup and Usage
 
-1.  Download the code into the `advanced-hybrid-tracker/` folder.
+1.  Download the code into the `Codes/advanced-hybrid-tracker/` folder.
 2.  Open `advanced-hybrid-tracker.ino` in the Arduino IDE.
 3.  Install the required libraries using the Library Manager.
 4.  **Crucial Configuration**: Modify the constants at the top of the sketch:
@@ -119,14 +108,24 @@ This version uses an Arduino R4 WiFi board, combining time-based predictive trac
     * `LONGITUDE`: Your geographic longitude (e.g., `-1.570225f`).
 5.  Upload the code to your Arduino R4 WiFi.
 6.  Open the **Serial Monitor** (Baud Rate: 115200) to view the connection status and the IP address.
-7.  On a device on the same network, open a web browser and navigate to that IP address (e.g., `http://192.168.1.100`) to see the web console.
-8.  
+7.  On a device on the same network, open a web browser and navigate to that IP address (e.g., `http://192.168.31.166`) to see the web console.
 
 ### Demo
-![Solar Tracker](<Demo/Solar Tracker With OLED Demo.gif>)
+![Solar Tracker](<Demo/Arduino R4 Solar Tracker console.jpg>)
+
 ---
 
 ## 💡 How It Works
+
+### Active Tracker (Simple)
+
+This model uses a simple **Feedback Loop**:
+
+1.  Compare the average of the top LDRs vs. the average of the bottom LDRs (`diffVertical`).
+2.  Compare the average of the left LDRs vs. the average of the right LDRs (`diffHorizontal`).
+3.  If the vertical difference is greater than the `tolerance`, move the vertical servo up or down.
+4.  If the horizontal difference is greater than the `tolerance`, move the horizontal servo left or right.
+5.  This process repeats, constantly minimizing the LDR differences to stay pointed at the light source.
 
 ### Hybrid Tracker (Advanced)
 
@@ -139,15 +138,6 @@ This model uses a **Predict-Correct** loop:
     * `currentPan += deltaPan + SOLAR_CORRECTION_RATE * (targetPanFromSolar - currentPan);`
     * This ensures the tracker not only points accurately at the sun (LDR part) but also knows where the sun *should* be, even after it's temporarily hidden by clouds (time-based part).
 
-### Active Tracker (Simple)
-
-This model uses a simple **Feedback Loop**:
-
-1.  Compare the average of the top LDRs vs. the average of the bottom LDRs (`diffVertical`).
-2.  Compare the average of the left LDRs vs. the average of the right LDRs (`diffHorizontal`).
-3.  If the vertical difference is greater than the `tolerance`, move the vertical servo up or down.
-4.  If the horizontal difference is greater than the `tolerance`, move the horizontal servo left or right.
-5.  This process repeats, constantly minimizing the LDR differences to stay pointed at the light source.
 
 ---
 
@@ -172,4 +162,4 @@ A special thank you to **Pun** for the overall project management and leadership
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE). (Recommended). You should add a `LICENSE` file to your repository.
+This project is licensed under the [MIT License](LICENSE). You should add a `LICENSE` file to your repository.
