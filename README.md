@@ -61,7 +61,7 @@ This is a classic "active" solar tracker. It doesn't care about time or location
 6.  When the device boots, it will first perform a "find max light" scan. The OLED will then light up with real-time data, and the tracker will begin active tracking.
 
 ### Demo
-- not assembled
+- not assembled  
 ![Solar Tracker](<Demo/Solar Tracker With OLED Demo.gif>)
 
 
