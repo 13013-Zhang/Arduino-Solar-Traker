@@ -14,6 +14,20 @@ This is a solar tracker repository for the ES2C6 course (or personal project). T
 
 ## 🚀 Project Structure
 
+.  
+├── 3D Printing  
+├── Codes/   
+│   ├── V1.0  
+│   ├── ...   
+│   └── V2.0_R4  
+│  
+├── simple-ldr-oled-tracker/  
+│   └── V1.2_OLED_4SPI.ino  
+│  
+├── advanced-hybrid-tracker/
+│   └── V2.1_EN.ino  
+│  
+└── Demo/   
 
 ---
 
