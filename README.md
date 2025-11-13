@@ -109,7 +109,7 @@ This version uses an Arduino R4 WiFi board, combining time-based predictive trac
 8.  
 
 ### Demo
-![Solar Tracker](https://github.com/13013-Zhang/ES2C6-Solar-Traker/blob/main/Solar%20Tracker%20With%20OLED%20Demo.gif)
+![Solar Tracker](<Demo/Solar Tracker With OLED Demo.gif>)
 ---
 
 ## 💡 How It Works
